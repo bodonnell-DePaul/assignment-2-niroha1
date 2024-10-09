@@ -1,0 +1,14 @@
+input[type="text"],
+input[type="date"] {
+    flex: 1;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+form {
+    background-color: #32CD32;
+    padding: 8px;
+    border-radius: 6px;
+  }

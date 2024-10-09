@@ -1,19 +1,19 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import TodoList from './ToDoList';
+import ViewPort from './ViewPort';
 
-describe('TodoList Component', () => {
+describe('ViewPort Component', () => {
   test('renders without crashing', () => {
-    render(<TodoList />);
+    render(<ViewPort />);
   });
 
   test('renders the title', () => {
-    render(<TodoList />);
+    render(<ViewPort />);
     const titleElement = screen.getByText(/Assignment 2: ToDo List/i);
     expect(titleElement).toBeInTheDocument();
   });
 
   test('renders form elements', () => {
-    render(<TodoList />);
+    render(<ViewPort />);
     const todoInput = screen.getByPlaceholderText(/Add todo item/i);
     const dueDateInput = screen.getByLabelText(/Due Date/i);
     const addButton = screen.getByText(/Add Todo/i);
@@ -24,13 +24,13 @@ describe('TodoList Component', () => {
   });
 
   test('renders todo items', () => {
-    render(<TodoList />);
+    render(<ViewPort />);
     const todoItems = screen.getAllByRole('tab');
     expect(todoItems.length).toBe(4); // Assuming there are 4 todos in the initial state
   });
 
   test('renders todo items with correct titles', () => {
-    render(<TodoList />);
+    render(<ViewPort />);
     const todoTitles = ['Todo 1', 'Todo 2', 'Todo 3', 'Todo 4'];
     todoTitles.forEach(title => {
       expect(screen.getByText(title)).toBeInTheDocument();
@@ -50,7 +50,7 @@ describe('TodoList Component', () => {
   };
   
   test('applies correct variant based on due date', () => {
-    render(<TodoList />);
+    render(<ViewPort />);
     const todoItems = screen.getAllByRole('tabpanel');
     const todoTab = screen.getAllByRole('tablist');
   
